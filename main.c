@@ -8,7 +8,7 @@
 int compterMots(char * chaine){
 	int i=1;
 	int compteur = 0;
-	
+	//nous 
 	while(chaine[i] != '\0'){
 		if((chaine[i] == ' ' && chaine[i-1] != ' ') 
 			||( chaine[i+1] != ' ' && chaine[i] == ' ')

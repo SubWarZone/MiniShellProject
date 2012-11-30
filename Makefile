@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-W -Wall -pthread
-LDFLAGS=-W -Wall -pthread
+CFLAGS=
+LDFLAGS=
 EXEC=exe
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)

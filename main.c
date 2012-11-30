@@ -10,36 +10,37 @@ int compterMots(char * chaine){
 	int compteur = 0;
 	//nous 
 	while(chaine[i] != '\0'){
-		if((chaine[i] == ' ' && chaine[i-1] != ' ') 
-			||( chaine[i+1] != ' ' && chaine[i] == ' ')
-			||(chaine[i] == ' ' && chaine[i+1] != ' ')){
+		if(chaine[i] == ' '){
 			
 				compteur++;
 		}
 		i++;
 	}
-	return compteur + 1;
+	return compteur+1; // il y a $compteur espace donc il y a 7 mots
 }
 
 char **separerLaChaine(char *chaine){
-	char **monTableauDeChaine = NULL;
+	
+	int nb_mots = compterMots(chaine);
+	char **monTableauDeChaine=NULL;
+	monTableauDeChaine= malloc(nb_mots*(sizeof(char*)));
 	char c;
 	char buffer[tailleBuffer];
-	int i=0;
-	int compteur = compterMots(chaine);
-	//tesfzregz
-	printf("il y a %d mots\n",compteur);
+	int i=1;
+	printf("il y a %d mots\n",nb_mots);
 
-	monTableauDeChaine = malloc(compteur*(sizeof(char*)));
+	
 
 	monTableauDeChaine[0]= &chaine[0];
 
 
 	while(chaine[i] != '\0'){
-		while(chaine[i] != ' '){
+		if(chaine[i] == ' '){
+			
 			monTableauDeChaine[i]= &chaine[i+1];
-			chaine[i]= ' ';
+			chaine[i]= '\0';
 		}
+		i++;
 	}
 	return monTableauDeChaine;
 }
@@ -52,15 +53,17 @@ int main(int argc, char **argv)
 	while (continuer){
 		char buffer[tailleBuffer];
 		char **chaineSeparee=NULL;
-
+		int i;
 		fgets(buffer,tailleBuffer,stdin);
 
 		printf("ma chaine est : %s\n",buffer);
 		
 		chaineSeparee= separerLaChaine(buffer);
 		
-		printf("%s\n",*chaineSeparee[0]);
 		
+		for(i=0;i<4;i++){
+			printf("%s\n",chaineSeparee[i]);
+		}
 		
 		//printf("%s\n",);
 

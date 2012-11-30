@@ -26,7 +26,7 @@ char **separerLaChaine(char *chaine){
 	char buffer[tailleBuffer];
 	int i=0;
 	int compteur = compterMots(chaine);
-	
+	//tesfzregz
 	printf("il y a %d mots\n",compteur);
 
 	monTableauDeChaine = malloc(compteur*(sizeof(char*)));

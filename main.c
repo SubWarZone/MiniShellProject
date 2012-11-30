@@ -4,7 +4,6 @@
 
 #define tailleBuffer 100
 
-
 int compterMots(char * chaine){
 	int i=1;
 	int compteur = 0;

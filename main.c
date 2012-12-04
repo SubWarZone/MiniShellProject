@@ -47,6 +47,7 @@ char **separerLaChaine(char *chaine){
 
 int main(int argc, char **argv)
 {
+	
 	int continuer=1;
 
 
@@ -70,4 +71,7 @@ int main(int argc, char **argv)
 	}
 
 	return 0;
+
+	
+
 }
